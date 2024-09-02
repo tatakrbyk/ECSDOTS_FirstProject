@@ -48,12 +48,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5573800965183833675, guid: 0ae344c7d1d1d4c4c8cfc86011e5ba64, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e4a59eb7d688e9a4d8ae3e4deb8e369e, type: 3}
+    - target: {fileID: 5573800965183833675, guid: 0ae344c7d1d1d4c4c8cfc86011e5ba64, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573800965183833675, guid: 0ae344c7d1d1d4c4c8cfc86011e5ba64, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6269040950297251378, guid: 0ae344c7d1d1d4c4c8cfc86011e5ba64, type: 3}
       propertyPath: m_Name
-      value: BaseProjectile
+      value: EnemyProjectile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6269040950297251378, guid: 0ae344c7d1d1d4c4c8cfc86011e5ba64, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6045608898514344710}
   m_SourcePrefab: {fileID: 100100000, guid: 0ae344c7d1d1d4c4c8cfc86011e5ba64, type: 3}
+--- !u!1 &1749292495949206382 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6269040950297251378, guid: 0ae344c7d1d1d4c4c8cfc86011e5ba64, type: 3}
+  m_PrefabInstance: {fileID: 5712437647446072668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6045608898514344710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749292495949206382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d3125d2f00c3b4ebed92664742953d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 10
+  Direction: -1

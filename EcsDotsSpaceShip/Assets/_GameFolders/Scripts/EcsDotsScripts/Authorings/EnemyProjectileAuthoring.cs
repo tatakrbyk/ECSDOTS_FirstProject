@@ -1,25 +1,23 @@
-
 using SpaceShipEcsDots.Components;
 using Unity.Entities;
 using UnityEngine;
 
 namespace SpaceShipEcsDots.Authorings
 {
-    public class PlayerProjectileAuthoring : MonoBehaviour
+    class EnemyProjectileAuthoring : MonoBehaviour
     {
         public float MoveSpeed = 10f;
-        public float Direction = 1f;
-        public float MaxLifeTime= 10f;
-
+        public float Direction = -1f;
+        public float MaxLifeTime = 10f;
     }
 
-    public class PlayerProjectileBaker : Baker<PlayerProjectileAuthoring>
+    class EnemyProjectileAuthoringBaker : Baker<EnemyProjectileAuthoring>
     {
-        public override void Bake(PlayerProjectileAuthoring authoring)
+        public override void Bake(EnemyProjectileAuthoring authoring)
         {
             var entity = GetEntity(TransformUsageFlags.Dynamic);
 
-            AddComponent<PlayerProjectileTag>(entity);
+            AddComponent<EnemyProjectileTag>(entity);
 
             AddComponent(entity, new ProjectileMoveData()
             {
