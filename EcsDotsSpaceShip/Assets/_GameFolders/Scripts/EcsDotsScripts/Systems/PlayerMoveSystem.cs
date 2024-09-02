@@ -38,13 +38,13 @@ namespace SpaceShipEcsDots.Systems
     {
         public float DeltaTime;
         [BurstCompile]
-        private void Execute(Entity entity, ref LocalTransform localTransform, in MoveData moveData, in InputData input,
+        private void Execute(Entity entity, ref LocalTransform localTransform, in PlayerMoveData moveData, in InputData input,
             in MoveBorderData moveBorderData)
         {
-            var direction = input.Direction;
+            float3 direction = input.Direction;
             float3 movePosition = (DeltaTime * moveData.MoveSpeed * direction) + localTransform.Position;
             movePosition.x = math.clamp(movePosition.x, -moveBorderData.Horizontal, moveBorderData.Horizontal);
-            movePosition.y = math.clamp(movePosition.y, moveBorderData.Vertical2, moveBorderData.Vertical1 );
+            movePosition.y = math.clamp(movePosition.y, moveBorderData.Vertical2, moveBorderData.Vertical1);
 
             localTransform.Position = movePosition;
         }

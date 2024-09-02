@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2926032931463858492
+--- !u!1 &1279184066002834350
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4088924612882404347}
-  - component: {fileID: 722712584578746705}
+  - component: {fileID: 3196084314950867130}
+  - component: {fileID: 3248464340869383732}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -17,28 +17,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4088924612882404347
+--- !u!4 &3196084314950867130
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2926032931463858492}
+  m_GameObject: {fileID: 1279184066002834350}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7201243497500259230}
+  m_Father: {fileID: 3630279349666063156}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &722712584578746705
+--- !u!212 &3248464340869383732
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2926032931463858492}
+  m_GameObject: {fileID: 1279184066002834350}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,18 +73,18 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b4a7c4d7c7ea8774d856f807418fcfae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6ebe88ebf1c6dba4f864a16bf6408012, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.99, y: 0.75}
+  m_Size: {x: 0.98, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &4663436249200864652
+--- !u!1 &1971146276236935520
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,46 +92,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7201243497500259230}
-  - component: {fileID: 6883161043813437617}
+  - component: {fileID: 3630279349666063156}
+  - component: {fileID: 7783942054272804399}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7201243497500259230
+--- !u!4 &3630279349666063156
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4663436249200864652}
+  m_GameObject: {fileID: 1971146276236935520}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.44, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4088924612882404347}
+  - {fileID: 3196084314950867130}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6883161043813437617
+--- !u!114 &7783942054272804399
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4663436249200864652}
+  m_GameObject: {fileID: 1971146276236935520}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1547512832e20584a98aa4589bb0c00b, type: 3}
+  m_Script: {fileID: 11500000, guid: 08029975ce76efe4b8f5d8b4a0a0236e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 5
-  Horizontal: 2
-  Vertical1: -1
-  Vertical2: 4.5
-  projectilePrefab: {fileID: 6300690593982311225, guid: b72acf6da997ef9429c8074fe71b39d4, type: 3}
-  MaxFireTime: 1
+  MoveSpeed: 3

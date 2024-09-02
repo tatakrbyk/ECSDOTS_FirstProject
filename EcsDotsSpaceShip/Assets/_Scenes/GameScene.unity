@@ -370,6 +370,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &532855997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 532855999}
+  - component: {fileID: 532855998}
+  m_Layer: 0
+  m_Name: EnemySubScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &532855998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532855997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45a335734b1572644a6a5d09d87adc65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SceneAsset: {fileID: 102900000, guid: 0530b63b39f04654b94bedc5f8c0b1b6, type: 3}
+  _HierarchyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  AutoLoadScene: 0
+  _SceneGUID:
+    Value:
+      x: 3010134864
+      y: 1164185491
+      z: 1558099099
+      w: 1796934799
+--- !u!4 &532855999
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532855997}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &927796849
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,7 +649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _SceneAsset: {fileID: 102900000, guid: 681a9eedd3577da4f89b4b79d0ccc5c1, type: 3}
   _HierarchyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  AutoLoadScene: 1
+  AutoLoadScene: 0
   _SceneGUID:
     Value:
       x: 3739853190
@@ -624,5 +677,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 1286045939}
-  - {fileID: 1028303088}
+  - {fileID: 532855999}
   - {fileID: 1256926920}
+  - {fileID: 1028303088}

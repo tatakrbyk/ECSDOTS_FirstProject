@@ -9,7 +9,7 @@ namespace SpaceShipEcsDots.Authorings
     {
         public float MoveSpeed = 10f;
         public float Direction = 1f;
-        public float MaxLifeTime= 10f;
+        public float MaxLifeTime= 2f;
 
     }
 

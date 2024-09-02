@@ -7,10 +7,15 @@ namespace SpaceShipEcsDots.Authorings
 {
     public class PlayerAuthoring : MonoBehaviour
     {
+        [Header("Movements")]
         public float MoveSpeed = 5f;
         public float Horizontal = 2f;
         public float Vertical1;
         public float Vertical2;
+        
+        [Header("Attacks")]
+        public GameObject projectilePrefab;
+        public float MaxFireTime = 1f;
     }
 
     // make Entity
@@ -20,7 +25,7 @@ namespace SpaceShipEcsDots.Authorings
         {
             var entity = GetEntity(TransformUsageFlags.Dynamic); // Set Component
 
-            AddComponent(entity, new MoveData()
+            AddComponent(entity, new PlayerMoveData()
             {
                 MoveSpeed = authoring.MoveSpeed,
             });
@@ -30,6 +35,12 @@ namespace SpaceShipEcsDots.Authorings
                 Horizontal = authoring.Horizontal,
                 Vertical1 = authoring.Vertical1,
                 Vertical2 = authoring.Vertical2,
+            });
+
+            AddComponent(entity, new AttackData()
+            {
+                Projectile = GetEntity(authoring.projectilePrefab, TransformUsageFlags.Dynamic),
+                MaxFireTime = authoring.MaxFireTime,
             });
 
             AddComponent<InputData>(entity);
