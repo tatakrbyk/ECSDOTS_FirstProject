@@ -1,14 +1,13 @@
 using SpaceShipEcsDots.Components;
 using SpaceShipEcsDots.Inputs;
-using System.Numerics;
 using Unity.Entities;
 using Unity.Mathematics;
+using UnityEngine;
 
 namespace SpaceShipEcsDots.Systems
 {
-    [UpdateInGroup(typeof(SimulationSystemGroup), OrderFirst = true)] // first run
-
-    public partial class PlayerInputSystems : SystemBase
+    [UpdateInGroup(typeof(SimulationSystemGroup), OrderFirst = true)]
+    public partial class PlayerInputSystem : SystemBase
     {
         GameInputActions _input;
 
@@ -31,7 +30,7 @@ namespace SpaceShipEcsDots.Systems
         protected override void OnUpdate()
         {
             var directionWithVector2 = _input.Player.Move.ReadValue<Vector2>();
-            float3 directionWithFloat3 = new float3(directionWithVector2.X, directionWithVector2.Y, 0f);
+            float3 directionWithFloat3 = new float3(directionWithVector2.x, directionWithVector2.y, 0f);
 
             var playerEntity = SystemAPI.GetSingletonEntity<PlayerTag>();
             var inputData = SystemAPI.GetComponent<InputData>(playerEntity);

@@ -7,5 +7,6 @@ namespace SpaceShipEcsDots.Components
         public Entity Projectile;
         public float CurrentFireTime;
         public float MaxFireTime;
+        public bool CanChange;
     }
 }

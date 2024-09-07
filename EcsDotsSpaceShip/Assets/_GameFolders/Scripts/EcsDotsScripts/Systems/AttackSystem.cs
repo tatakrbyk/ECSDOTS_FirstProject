@@ -1,4 +1,3 @@
-using SpaceShipEcsDots.Aspects;
 using SpaceShipEcsDots.Components;
 using Unity.Burst;
 using Unity.Entities;
@@ -10,7 +9,7 @@ namespace SpaceShipEcsDots.Systems
     [BurstCompile]
     [UpdateInGroup(typeof(SimulationSystemGroup))]
     [UpdateBefore(typeof(TransformSystemGroup))]
-    partial struct AttackSystem : ISystem
+    public partial struct AttackSystem : ISystem
     {
         [BurstCompile]
         public void OnCreate(ref SystemState state)
@@ -22,16 +21,15 @@ namespace SpaceShipEcsDots.Systems
         public void OnUpdate(ref SystemState state)
         {
             var entityCommandBuffer = SystemAPI.GetSingleton<BeginSimulationEntityCommandBufferSystem.Singleton>();
-            float deltaTime = SystemAPI.Time.DeltaTime;
+            var deltaTime = SystemAPI.Time.DeltaTime;
 
             new AttackJob()
             {
                 DeltaTime = deltaTime,
-                MyEntityCommandBuffer = entityCommandBuffer.CreateCommandBuffer(state.WorldUnmanaged).AsParallelWriter(),
+                MyEntityCommandBuffer = entityCommandBuffer.CreateCommandBuffer(state.WorldUnmanaged).AsParallelWriter()
             }.ScheduleParallel();
         }
-
-}
+    }
 
     [BurstCompile]
     public partial struct AttackJob : IJobEntity
@@ -40,23 +38,21 @@ namespace SpaceShipEcsDots.Systems
         public EntityCommandBuffer.ParallelWriter MyEntityCommandBuffer;
 
         [BurstCompile]
-        private void Execute(Entity entity, ref AttackData attackData, in LocalTransform localTransform, [ChunkIndexInQuery] int sortkey)
+        private void Execute(Entity entity, ref AttackData attackData, in LocalTransform localTransform, [ChunkIndexInQuery] int sortKey)
         {
             attackData.CurrentFireTime += DeltaTime;
-            if(attackData.CurrentFireTime > attackData.MaxFireTime)
+            if (attackData.CurrentFireTime > attackData.MaxFireTime)
             {
                 attackData.CurrentFireTime = 0f;
-                var projectileEntity = MyEntityCommandBuffer.Instantiate(sortkey, attackData.Projectile);
-
-                MyEntityCommandBuffer.SetComponent(sortkey, projectileEntity, new LocalTransform()
+                attackData.CanChange = true;
+                var projectileEntity = MyEntityCommandBuffer.Instantiate(sortKey, attackData.Projectile);
+                MyEntityCommandBuffer.SetComponent(sortKey, projectileEntity, new LocalTransform()
                 {
                     Position = localTransform.Position,
                     Rotation = quaternion.identity,
                     Scale = 1f
-
                 });
             }
         }
     }
 }
-

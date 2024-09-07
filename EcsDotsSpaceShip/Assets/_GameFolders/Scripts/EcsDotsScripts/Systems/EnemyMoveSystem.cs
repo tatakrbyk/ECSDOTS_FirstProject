@@ -8,7 +8,7 @@ namespace SpaceShipEcsDots.Systems
 {
     [BurstCompile]
     [UpdateInGroup(typeof(SimulationSystemGroup))]
-    [UpdateBefore(typeof(TransformSystemGroup))]
+    [UpdateBefore(typeof(TransformSystemGroup))]    
     partial struct EnemyMoveSystem : ISystem
     {
         [BurstCompile]
@@ -31,7 +31,13 @@ namespace SpaceShipEcsDots.Systems
         [BurstCompile]
         private void Execute(Entity entity, ref LocalTransform localTransform, ref EnemyMoveData enemyMoveData, in EnemyMoveTargetData enemyMoveTargetData)
         {
-            if (math.distance(enemyMoveTargetData.Target, localTransform.Position) < 0.1f) return;
+            if (enemyMoveData.canPassNextTarget) return;
+
+            if (math.distance(enemyMoveTargetData.Target, localTransform.Position) < 0.1f)
+            {
+                enemyMoveData.canPassNextTarget = true;
+                return;
+            }
             var direction = math.normalize(enemyMoveTargetData.Target - localTransform.Position);
 
             localTransform.Position += DeltaTime * enemyMoveData.MoveSpeed * direction;

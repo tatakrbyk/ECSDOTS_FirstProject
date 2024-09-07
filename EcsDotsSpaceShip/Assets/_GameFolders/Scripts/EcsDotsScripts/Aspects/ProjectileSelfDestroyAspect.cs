@@ -6,7 +6,7 @@ namespace SpaceShipEcsDots.Aspects
     public readonly partial struct ProjectileSelfDestroyAspect : IAspect
     {
         public readonly Entity entity;
-        private readonly RefRW<ProjectileSelfDestroyData> _projecttileSelfDestroyDataRW;
+        readonly RefRW<ProjectileSelfDestroyData> _projecttileSelfDestroyDataRW;
 
         public bool CanDestroy => _projecttileSelfDestroyDataRW.ValueRW.CanDestroy;
 

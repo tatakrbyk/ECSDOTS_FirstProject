@@ -10,6 +10,7 @@ namespace SpaceShipEcsDots.Authorings
         public float MoveSpeed = 10f;
         public float Direction = 1f;
         public float MaxLifeTime= 2f;
+        public float MaxDamage = 10f;
 
     }
 
@@ -21,6 +22,15 @@ namespace SpaceShipEcsDots.Authorings
 
             AddComponent<PlayerProjectileTag>(entity);
 
+            AddComponent(entity, new LaserSoundData()
+            {
+                IsPlayer = true,
+            });
+
+            AddComponent(entity, new DamageData()
+            {
+                Damage = authoring.MaxDamage,
+            });
             AddComponent(entity, new ProjectileMoveData()
             {
                 Direction = authoring.Direction,

@@ -468,12 +468,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5615851167955241809, guid: f0fb7ab9ef176d04397f17ddceb9e2fd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5615851167955241809, guid: f0fb7ab9ef176d04397f17ddceb9e2fd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5615851167955241809, guid: f0fb7ab9ef176d04397f17ddceb9e2fd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5615851167955241809, guid: f0fb7ab9ef176d04397f17ddceb9e2fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5615851167955241809, guid: f0fb7ab9ef176d04397f17ddceb9e2fd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 5615851167955241809, guid: f0fb7ab9ef176d04397f17ddceb9e2fd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -485,15 +497,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5615851167955241809, guid: f0fb7ab9ef176d04397f17ddceb9e2fd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5615851167955241809, guid: f0fb7ab9ef176d04397f17ddceb9e2fd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5615851167955241809, guid: f0fb7ab9ef176d04397f17ddceb9e2fd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5615851167955241809, guid: f0fb7ab9ef176d04397f17ddceb9e2fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -676,7 +688,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 1286045939}
-  - {fileID: 532855999}
   - {fileID: 1256926920}
   - {fileID: 1028303088}
+  - {fileID: 1286045939}
+  - {fileID: 532855999}

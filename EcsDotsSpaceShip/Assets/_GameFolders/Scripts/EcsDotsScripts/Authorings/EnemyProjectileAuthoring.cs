@@ -9,15 +9,32 @@ namespace SpaceShipEcsDots.Authorings
         public float MoveSpeed = 10f;
         public float Direction = -1f;
         public float MaxLifeTime = 10f;
+
+        public float MaxDamage = 10f;
+        public float MinDamage = 2f;
     }
 
-    class EnemyProjectileAuthoringBaker : Baker<EnemyProjectileAuthoring>
+    class EnemyProjectileBaker : Baker<EnemyProjectileAuthoring>
     {
         public override void Bake(EnemyProjectileAuthoring authoring)
         {
             var entity = GetEntity(TransformUsageFlags.Dynamic);
 
             AddComponent<EnemyProjectileTag>(entity);
+            AddComponent<DamageData>(entity);
+
+            AddComponent(entity, new LaserSoundData()
+            {
+                IsPlayer = false
+            }); ;
+
+            AddComponent(entity, new DamageRandomData()
+            {
+                MaxDamage = authoring.MaxDamage,
+                MinDamage = authoring.MinDamage,
+
+            });
+
 
             AddComponent(entity, new ProjectileMoveData()
             {
